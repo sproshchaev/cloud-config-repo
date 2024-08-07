@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url:
+    username: 
+    password: 
+    driver-class-name: org.postgresql.Driver
+  data:
+    jdbc:
+      repositories:
+        enabled: true
+  liquibase:
+    enabled: true
+    default-schema: test_bd
+server:
+  port: 8084 # 8084 - рабочий, 8085 - тестовый
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: true
+
+logging:
+  level:
+    org.springframework.jdbc.core.JdbcTemplate: TRACE

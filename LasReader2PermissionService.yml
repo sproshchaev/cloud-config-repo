@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    # url: jdbc:h2:file:./db/user_permission_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:user_permission_db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  sql:
+    init:
+      platform: h2
+  liquibase:
+    enabled: true
+  h2:
+    console:
+      path: /h2-console
+      settings:
+        web-allow-others: true
+  jmx:
+    enabled: true
+  ldap:
+    urls: 
+    username: 
+    password: 
+    custom-base: 
+    sam-account-name: 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  health:
+    defaults:
+      enabled: true
+server:
+  port: 8082 # 8082 - рабочий, 8083 - тестовый
+  h2:
+    tcpPort: 9092 #9092 - рабочий, 9093 - тестовый
