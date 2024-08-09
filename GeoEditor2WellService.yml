@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: 
-    username: 
-    password: 
+    url: jdbc:postgresql://localhost:5432/db_gptmn
+    username: usr
+    password: pwd
     driver-class-name: org.postgresql.Driver
   data:
     jdbc:
